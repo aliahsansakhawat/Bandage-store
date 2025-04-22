@@ -44,12 +44,12 @@ const Shop = () => {
       thumbnail: img,
     })) || [];
 
-  const fectchData = () => {
-    dispatch(fetchApi());
-  };
-  useEffect(() => {
-    fectchData();
-  }, []);
+  // const fectchData = () => {
+  //   dispatch(fetchApi());
+  // };
+  // useEffect(() => {
+  //   fectchData();
+  // }, []);
   useEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -86,6 +86,7 @@ const Shop = () => {
     dispatch(addToCart(SingleProduct));
     notifyCart();
   };
+  
   const handleAddToFavourite = () => {
     dispatch(addToFavourite(SingleProduct));
     notify();
@@ -140,7 +141,10 @@ const Shop = () => {
               </div>
               <span className="text-[24px] font-bold mt-[20px] flex flex-col text-[#252b42]">
                 ${SingleProduct?.price}/
-                <span className="text-[15px] text-[#737373]"> Discount : {SingleProduct?.discountPercentage}% OFF</span>
+                <span className="text-[15px] text-[#737373]">
+                  {" "}
+                  Discount : {SingleProduct?.discountPercentage}% OFF
+                </span>
               </span>
               {/* <span className="text-[24px] font-bold mt-[20px] text-[#252b42]">
               </span> */}
