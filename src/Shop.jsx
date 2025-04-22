@@ -50,10 +50,10 @@ const Shop = () => {
   // useEffect(() => {
   //   fectchData();
   // }, []);
-  
-  // useEffect(() => {
-  //   window.scrollTo(0, 0);
-  // });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const notify = () =>
     toast("Added to favourite", {
@@ -124,7 +124,7 @@ const Shop = () => {
                 showPlayButton={false}
               />
             </div>
-            <div className="ml-[45px] w-[45%] max-[1024px]:mt-6 max-[1024px]:w-full">
+            <div className="ml-[45px]  w-[45%] max-[1024px]:mt-6 max-[1024px]:w-full max-[1024px]:ml-0 px-4">
               <span className="text-[20px] font-normal text-[#252b42]">
                 {SingleProduct?.title}{" "}
               </span>
@@ -206,7 +206,7 @@ const Shop = () => {
         )}
       </div>
 
-      <div className="py-20px px-[180px]">
+      <div className="py-20px px-[180px] max-[1024px]:px-[70px]">
         <div className="flex items-center gap-8 justify-center p-6 text-sm font-semibold text-[#737373] font-[Montserrat]">
           <span>Description</span>
           <span>Additional Information</span>

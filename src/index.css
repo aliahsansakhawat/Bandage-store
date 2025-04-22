@@ -9,3 +9,6 @@ body {
     width: 600px !important;
     height: 600px !important;
 }
+.image-gallery-slide.image-gallery-center{
+    overflow: scroll;
+}
