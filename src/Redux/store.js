@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import apiReducer from "../Redux/Slices/SliceApi";
+import apiReducer from "./Slices/SliceApi";
 import cartReducer from "./Slices/cartSlice";
 import addFavourite from "./Slices/addFavouriteSlice";
 export const store = configureStore({
