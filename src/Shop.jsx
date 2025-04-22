@@ -27,7 +27,7 @@ import { addToCart } from "./Redux/Slices/cartSlice";
 import { addToFavourite } from "./Redux/Slices/addFavouriteSlice";
 import toast, { Toaster } from "react-hot-toast";
 import ProductDeatilimg from "./assets/Navbar/product-detail-img.png";
-import { fetchApi } from "./Redux/Slices/sliceApi";
+// import { fetchApi } from "./Redux/Slices/sliceApi";
 import Rating from "@mui/material/Rating";
 
 const Shop = () => {
@@ -86,7 +86,7 @@ const Shop = () => {
     dispatch(addToCart(SingleProduct));
     notifyCart();
   };
-  
+
   const handleAddToFavourite = () => {
     dispatch(addToFavourite(SingleProduct));
     notify();
