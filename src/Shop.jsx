@@ -50,9 +50,11 @@ const Shop = () => {
   // useEffect(() => {
   //   fectchData();
   // }, []);
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
+  
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // });
+
   const notify = () =>
     toast("Added to favourite", {
       icon: "👏",
@@ -65,6 +67,7 @@ const Shop = () => {
         textAlign: "left",
       },
     });
+
   const notifyCart = () =>
     toast("Added to Cart", {
       icon: "👏",
