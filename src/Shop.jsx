@@ -97,6 +97,8 @@ const Shop = () => {
   const bestSeller = (data) => {
     dispatch(fetchProductById(data.id));
     console.log("dataid", data);
+    window.scrollTo(0, 0);
+
   };
   return (
     <>
