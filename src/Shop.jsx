@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { MdArrowForwardIos } from "react-icons/md";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import { RiStarSLine } from "react-icons/ri";
 import { useState } from "react";
 import Circle from "@uiw/react-color-circle";
 import Stack from "@mui/material/Stack";
@@ -10,7 +9,6 @@ import Button from "@mui/material/Button";
 import { FaRegHeart } from "react-icons/fa";
 import { SlBasket } from "react-icons/sl";
 import { FaEye } from "react-icons/fa";
-import FeaturedChild from "./FeaturedChild";
 import Footer from "./Footer";
 import aws from "./assets/Footer/aws.png";
 import discord from "./assets/Footer/discord.png";
@@ -21,7 +19,7 @@ import stripe from "./assets/Footer/stripe.png";
 import TopNav from "./TopNav";
 import Navbar from "./Navbar";
 import { useParams } from "react-router-dom";
-import { fetchProductById } from "./Redux/Slices/sliceApi";
+import { fetchApi, fetchProductById } from "./Redux/Slices/sliceApi";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "./Redux/Slices/cartSlice";
 import { addToFavourite } from "./Redux/Slices/addFavouriteSlice";
@@ -44,12 +42,12 @@ const Shop = () => {
       thumbnail: img,
     })) || [];
 
-  // const fectchData = () => {
-  //   dispatch(fetchApi());
-  // };
-  // useEffect(() => {
-  //   fectchData();
-  // }, []);
+  const fectchData = () => {
+    dispatch(fetchApi());
+  };
+  useEffect(() => {
+    fectchData();
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -96,7 +94,10 @@ const Shop = () => {
   };
   console.log(SingleProduct, "SingleProduct...");
   console.log(id, "id...");
-
+  const bestSeller = (data) => {
+    dispatch(fetchProductById(data.id));
+    console.log("dataid", data);
+  };
   return (
     <>
       <TopNav />
@@ -250,6 +251,7 @@ const Shop = () => {
         <div className="grid grid-cols-5 gap-x-[10px] gap-y-[30px] mt-[15px] py-[3%] font-[Montserrat] px-[15%] max-[1024px]:grid-cols-1">
           {productList?.products?.slice(0, 10).map((data) => (
             <div
+              onClick={() => bestSeller(data)}
               className="flex flex-col items-center justify-between cursor-pointer"
               key={data.id}
             >

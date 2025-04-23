@@ -32,6 +32,7 @@ const Navbar = () => {
   const myHandleClose = () => setShowFavourite(false);
   const myhandleShow = () => setShowFavourite(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
